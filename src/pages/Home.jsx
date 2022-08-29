@@ -1,6 +1,5 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { Navbar } from "../components/Navbar";
-import { useQuery } from "react-query";
 import { useState } from "react";
 import { useLocation } from "../hooks/useLocation";
 export const Home = () => {
