@@ -28,10 +28,10 @@ export const HourFore = ({ data }) => {
                 : hour + index === 48
                 ? new Date().getDate() + 2 + '/' + (new Date().getMonth() + 1)
                 : hour + index > 48
-                ? (hour+index) % 48
+                ? ((hour + index) % 48).toString().length===1?`0${(hour+index)%48}:00`:`${((hour + index)%48)}:00`
                 : hour + index > 24
-                ? (hour + index) % 24
-                : hour + index}
+                ? ((hour + index) % 24).toString().length===1?`0${(hour+index)%24}:00`:`${((hour + index)%24)}:00`
+                : (hour + index).toString().length===1?`0${hour+index}:00`:`${(hour + index)}:00`}
            </Text>
            <Text>{Math.round(Element.temp)}°</Text>
            <Text>{Element.weather[0].main}</Text>

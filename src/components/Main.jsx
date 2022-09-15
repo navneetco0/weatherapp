@@ -42,10 +42,10 @@ export const Main = ({Data}) => {
           {/* <Flex p="5px" bg="rgba(255, 255, 255, 0.5)" borderRadius={"20px"} w="fit-content" alignItems="center"><Leaf/> <Text>AQl </Text></Flex> */}
         </Box>
         {/* <Show below="480px"> */}
-            <Button m="10px 10%" borderRadius={'40px'} w="80%" bg="rgba(255, 255, 255, 0.3)" _hover={{bg:"rgba(255, 255, 255, 0.4)"}} _active={{bg:"rgba(255, 255, 255, 0.5)"}}>5-day forecast</Button>
+            <Button m="10px 10%" borderRadius={'40px'} w="80%" bg="rgba(255, 255, 255, 0.3)" _hover={{bg:"rgba(255, 255, 255, 0.4)"}} _active={{bg:"rgba(255, 255, 255, 0.5)"}}>7-days forecast</Button>
         {/* </Show> */}
         <HourFore data={Data?.data?.data?.hourly}/>
-        <Detail data={Data?.data?.data?.hourly}/>
+        <Detail data={Data?.data?.data}/>
     </Box>
   )
 }

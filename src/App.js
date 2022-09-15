@@ -15,7 +15,7 @@ function App() {
     setPosition({...position, lat:position.coords.latitude, lon:position.coords.longitude});
   }
   return (
-    <Box maxW="100%" bg="green">
+    <Box maxW="100%">
      {position.lat&&position.lon&&<Box maxWidth={'448px'} m='auto'><Home lat={position.lat} lon={position.lon}/></Box>}
     </Box>
   );
