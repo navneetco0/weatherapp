@@ -19,13 +19,13 @@ export const Detail = ({ data }) => {
           </Text>
           <Text>
             {new Date().getHours() < 6 || new Date().getHours() > 19
-              ? Math.round(data.daily[0].feels_like.night)
+              ? Math.round(data?.daily[0].feels_like.night)
               : new Date().getHours()<9
-              ?Math.round(data.daily[0].feels_like.morn)
+              ?Math.round(data?.daily[0].feels_like.morn)
               : new Date().getHours()<17
-              ?Math.round(data.daily[0].feels_like.day)
+              ?Math.round(data?.daily[0].feels_like.day)
               : new Date().getHours()<19
-              ?Math.round(data.daily[0].feels_like.evening)
+              ?Math.round(data?.daily[0].feels_like.evening)
               :''}
               °C
           </Text>
@@ -34,7 +34,7 @@ export const Detail = ({ data }) => {
           <Text fontSize="12px" color="rgba(255, 255, 255, 0.6)">
             Humidity
           </Text>
-          <Text>{data.daily[0].humidity}%</Text>
+          <Text>{data?.daily[0].humidity}%</Text>
         </Box>
       </Flex>
       <Flex gap="2%" justifyContent={'space-between'}>
@@ -42,13 +42,13 @@ export const Detail = ({ data }) => {
           <Text fontSize="12px" color="rgba(255, 255, 255, 0.6)">
             Pressure
           </Text>
-          <Text>{data.daily[0].pressure}mbar</Text>
+          <Text>{data?.daily[0].pressure}mbar</Text>
         </Box>
         <Box w="49%">
           <Text fontSize="12px" color="rgba(255, 255, 255, 0.6)">
             Wind speed
           </Text>
-          <Text>{data.daily[0].wind_speed}km/h</Text>
+          <Text>{data?.daily[0].wind_speed}km/h</Text>
         </Box>
       </Flex>
     </Box>

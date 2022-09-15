@@ -16,6 +16,7 @@ export const HourFore = ({ data }) => {
       {data &&
         data.map((Element, index) => (
           <Box
+          key={index}
             textAlign={'center'}
             ml={index === 0 ? '10%' : ''}
             mr={index === data.length - 1 ? '10%' : ''}
