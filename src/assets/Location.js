@@ -9,7 +9,7 @@ export const Location = () => {
       y="0px"
       viewBox="0 0 512 512"
       fill="white"
-      style={{enableBackground:"new 0 0 512 512", transform:'rotate(70deg)'}}
+      style={{enableBackground:"new 0 0 512 512",transform:"rotate(135deg)"}}
     >
       <g>
         <polygon points="0,0 512,204.8 307.2,307.2 256,512  " />

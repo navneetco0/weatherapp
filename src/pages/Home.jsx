@@ -13,10 +13,10 @@ export const Home = ({ lat, lon }) => {
       minH="100vh"
       backgroundImage="linear-gradient(315deg, #0652C5 0%, #045DE9 74%)"
       color="white"
-      p={["0px", '40px']}
+      // p={["0px", '40px']}
     >
       {location?.data&&<Navbar data={location.data}/> }
-      <Flex pt="50px">
+      <Flex pt="50px" overflowX={'hidden'}>
         {Data&&<Main Data={Data}/>}
       </Flex>
 

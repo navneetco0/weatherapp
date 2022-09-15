@@ -1,13 +1,43 @@
-import { Box, Flex } from "@chakra-ui/react"
+import { Box, Flex, Text } from '@chakra-ui/react';
+import { Location } from "../assets/Location"
 
-export const HourFore = ({data})=>{
-    // console.log(data)
-    const hour = new Date().getHours();
-    return (
-        <Flex className="hourForecast" m={['10px 0px']} overflowX="scroll" gap="20px">
-          {data&&data.map((Element,index)=><Box textAlign={'center'} ml={index===0?"10%":''} mr={index===data.length-1?"10%":''}>
-            {index===0?"Now":hour+index===24?new Date().getDate()+1+"/"+(new Date().getMonth()+1):hour+index}
-          </Box>)}
-        </Flex>
-    )
+export const HourFore = ({ data }) => {
+  // console.log(data)
+  const hour = new Date().getHours()
+  return (
+    <Flex
+    // border={'1px solid blue'}
+      w="100%"
+      className="hourForecast"
+      m={['10px 0px']}
+      overflowX="scroll"
+      gap="20px"
+    >
+      {data &&
+        data.map((Element, index) => (
+          <Box
+            textAlign={'center'}
+            ml={index === 0 ? '10%' : ''}
+            mr={index === data.length - 1 ? '10%' : ''}
+          >
+           <Text>
+            {index === 0
+                ? 'Now'
+                : hour + index === 24
+                ? new Date().getDate() + 1 + '/' + (new Date().getMonth() + 1)
+                : hour + index === 48
+                ? new Date().getDate() + 2 + '/' + (new Date().getMonth() + 1)
+                : hour + index > 48
+                ? (hour+index) % 48
+                : hour + index > 24
+                ? (hour + index) % 24
+                : hour + index}
+           </Text>
+           <Text>{Math.round(Element.temp)}°</Text>
+           <Text>{Element.weather[0].main}</Text>
+           <Flex alignItems={'center'} fontSize='12px'><Box w="fit-content" h="fit-content" transform={`rotate(${Element.wind_deg}deg)`}><Location/></Box> {Element.wind_speed}km/h</Flex>
+          </Box>
+        ))}
+    </Flex>
+  )
 }

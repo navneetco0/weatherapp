@@ -1,12 +1,13 @@
-import { Box, Button, Flex, Show, Text } from "@chakra-ui/react"
+import { Box, Button, Flex, Text } from "@chakra-ui/react"
 import { Detail } from "./Detail"
 import { HourFore } from "./HourFore"
 
 export const Main = ({Data}) => {
+  const weakDay = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   return (
-    <Box w={['100%', 'fit-content']}>
+    <Box w={['100%']}>
         <Box>
-          <Flex w="fit-content" m={['auto', '0px 0px']}>
+          <Flex w="fit-content" m={['auto']}>
             <Text fontSize="75px">{Data?.data?.data?.hourly[0].temp} </Text>
             <Text>°C</Text>
           </Flex>
@@ -31,7 +32,7 @@ export const Main = ({Data}) => {
               </Text>
             </Flex>
             <Flex justifyContent={'space-between'}>
-              <Text>Sat: {Data?.data?.data?.daily[2].weather[0].main}</Text>{' '}
+              <Text>{weakDay[new Date().getDay() + 1]}: {Data?.data?.data?.daily[2].weather[0].main}</Text>{' '}
               <Text>
                 {Math.round(Data?.data?.data?.daily[2].temp.max)}°/
                 {Math.round(Data?.data?.data?.daily[2].temp.min)}°{' '}
@@ -40,9 +41,9 @@ export const Main = ({Data}) => {
           </Box>
           {/* <Flex p="5px" bg="rgba(255, 255, 255, 0.5)" borderRadius={"20px"} w="fit-content" alignItems="center"><Leaf/> <Text>AQl </Text></Flex> */}
         </Box>
-        <Show below="480px">
+        {/* <Show below="480px"> */}
             <Button m="10px 10%" borderRadius={'40px'} w="80%" bg="rgba(255, 255, 255, 0.3)" _hover={{bg:"rgba(255, 255, 255, 0.4)"}} _active={{bg:"rgba(255, 255, 255, 0.5)"}}>5-day forecast</Button>
-        </Show>
+        {/* </Show> */}
         <HourFore data={Data?.data?.data?.hourly}/>
         <Detail data={Data?.data?.data?.hourly}/>
     </Box>
