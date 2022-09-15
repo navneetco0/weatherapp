@@ -3,8 +3,9 @@ import { Flex, Box, Text, Tooltip} from "@chakra-ui/react";
 import { Location } from "../assets/Location";
 
 export const Navbar = ({data})=>{
+
     return (
-        <Flex position="fixed" w="100%" p="20px 4%">
+        <Flex position="fixed" top="0" left='0' w="100%" p="20px 4%">
             <Tooltip label="add city"><Box cursor={"pointer"}><Plus/></Box></Tooltip>
             <Box m="auto">
                 <Box w="fit-content">
