@@ -5,7 +5,7 @@ import { Location } from '../assets/Location'
 export const Navbar = ({ data }) => {
   return (
     <Flex position="fixed" top="0" left="0" w="100%">
-      <Flex width={['100%','450px']} m='auto' p='10px 4%' >
+      <Flex width={['100%','450px']} m='auto' p='10px' >
         <Tooltip label="add city">
           <Box cursor={'pointer'}>
             <Plus />

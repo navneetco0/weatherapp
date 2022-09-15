@@ -9,10 +9,10 @@ export const Detail = ({ data }) => {
       borderRadius={'20px'}
     >
       <Flex justifyContent={'space-between'}>
-        <Text>Sunrise </Text>
-        <Text>Sunset</Text>
+        <Text>Sunrise {new Date(data?.daily[0].sunrise * 1000).toString().slice(16, 24)} </Text>
+        <Text>Sunset {new Date(data?.daily[0].sunset * 1000).toString().slice(16, 24)}</Text>
       </Flex>
-      <Flex gap="2%" justifyContent={'space-between'}>
+      <Flex m="5px 0px" gap="2%" justifyContent={'space-between'}>
         <Box w="49%">
           <Text fontSize="12px" color="rgba(255, 255, 255, 0.6)">
             Real feel
@@ -37,7 +37,7 @@ export const Detail = ({ data }) => {
           <Text>{data?.daily[0].humidity}%</Text>
         </Box>
       </Flex>
-      <Flex gap="2%" justifyContent={'space-between'}>
+      <Flex m="5px 0px" gap="2%" justifyContent={'space-between'}>
         <Box w="49%">
           <Text fontSize="12px" color="rgba(255, 255, 255, 0.6)">
             Pressure
