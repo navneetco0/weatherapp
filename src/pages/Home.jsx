@@ -1,4 +1,5 @@
 import { Box, Flex } from "@chakra-ui/react";
+import { BGAn } from "../components/BGAn";
 import { Main } from "../components/Main";
 // import { Leaf } from "../assets/Leaf";
 import { Navbar } from "../components/Navbar";
@@ -13,10 +14,12 @@ export const Home = ({ lat, lon }) => {
       minH="100vh"
       backgroundImage="linear-gradient(315deg, #0652C5 0%, #045DE9 74%)"
       color="white"
+      pos={'relative'}
       // p={["0px", '40px']}
     >
       {location?.data&&<Navbar data={location.data}/> }
-      <Flex pt="50px" overflowX={'hidden'}>
+      {Data?.data&&<BGAn data={Data?.data?.data}/>}
+      <Flex overflowX={'hidden'}>
         {Data&&<Main Data={Data}/>}
       </Flex>
 

@@ -1,12 +1,10 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { Location } from "../assets/Location"
 
-export const HourFore = ({ data }) => {
-  // console.log(data)
+export const HourFore = ({ data, Icons }) => {
   const hour = new Date().getHours()
   return (
     <Flex
-    // border={'1px solid blue'}
       w="100%"
       className="hourForecast"
       m={['10px 0px']}
@@ -35,7 +33,7 @@ export const HourFore = ({ data }) => {
                 : (hour + index).toString().length===1?`0${hour+index}:00`:`${(hour + index)}:00`}
            </Text>
            <Text>{Math.round(Element.temp)}°</Text>
-           <Text>{Element.weather[0].main}</Text>
+           <Box w="fit-content" m={'5px auto'}>{Icons[Element.weather[0].main]}</Box>
            <Flex alignItems={'center'} fontSize='12px'><Box w="fit-content" h="fit-content" transform={`rotate(${Element.wind_deg}deg)`}><Location/></Box> {Element.wind_speed}km/h</Flex>
           </Box>
         ))}
