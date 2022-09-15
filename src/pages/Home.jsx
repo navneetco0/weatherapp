@@ -1,15 +1,10 @@
 import { Box, Flex, Center, Text } from "@chakra-ui/react";
-import { useEffect } from "react";
 import { Navbar } from "../components/Navbar";
 import { useLocation } from "../hooks/useLocation";
 import { useWeather } from "../hooks/useWeather";
 export const Home = ({ lat, lon }) => {
   const Data = useWeather(lat, lon);
   const location = useLocation(lat, lon);
-  // useEffect(()=>{
-  //   console.log(location)
-  //   console.log(Data);
-  // },[]);
   return (
     <Box
       w={"100%"}
