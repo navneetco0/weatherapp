@@ -10,7 +10,6 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react'
-import { useEffect } from 'react'
 import { useRef } from 'react'
 import { ArrowLeft } from '../assets/ArrowLeft'
 
