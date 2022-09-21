@@ -2,6 +2,7 @@ export const SunShine = () => {
   return (
     <svg
       className="sunshine"
+      fill="currentColor"
       height={'24px'}
       viewBox="0 0 512 512"
     >

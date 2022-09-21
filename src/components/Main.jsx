@@ -1,15 +1,16 @@
-import { Box, Button, Center, Flex, Text } from '@chakra-ui/react'
+import { Box, Center, Flex, Text } from '@chakra-ui/react'
 import { Rain } from '../assets/Rain'
 import { Snow } from '../assets/Snow'
 import { SunCloud } from '../assets/SunCloud'
 import { SunShine } from '../assets/SunShine'
 import { Thunder } from '../assets/Thunder'
+import { DayFore } from './DayFore'
 import { Detail } from './Detail'
 import { HourFore } from './HourFore'
 
 export const Main = ({ Data }) => {
   const weakDay = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-  const Icons = { Rain: <Rain />, Clouds: <SunCloud />, Clear: <SunShine/>, Snow: <Snow/>, Thunder: <Thunder/> }
+  const  Icons = { Rain: <Rain />, Clouds: <SunCloud />, Clear: <SunShine/>, Snow: <Snow/>, Thunder: <Thunder/> }
   return (
     <Box
       pt="120px"
@@ -51,7 +52,7 @@ export const Main = ({ Data }) => {
             <Center alignItems={'center'}>
               <Box mr="5px">{Icons[Data?.data?.data?.daily[2].weather[0].main]}</Box>{' '}
               <Text>
-                {weakDay[new Date().getDay() + 1]}:{' '}
+                {weakDay[(new Date().getDay() + 1)%7]}:{' '}
                 {Data?.data?.data?.daily[2].weather[0].main}
               </Text>
             </Center>{' '}
@@ -64,16 +65,7 @@ export const Main = ({ Data }) => {
         {/* <Flex p="5px" bg="rgba(255, 255, 255, 0.5)" borderRadius={"20px"} w="fit-content" alignItems="center"><Leaf/> <Text>AQl </Text></Flex> */}
       </Box>
       {/* <Show below="480px"> */}
-      <Button
-        m="10px 10%"
-        borderRadius={'40px'}
-        w="80%"
-        bg="rgba(255, 255, 255, 0.3)"
-        _hover={{ bg: 'rgba(255, 255, 255, 0.4)' }}
-        _active={{ bg: 'rgba(255, 255, 255, 0.5)' }}
-      >
-        7-days forecast
-      </Button>
+      <DayFore data={Data?.data?.data?.daily} Icons={Icons} weakDay={weakDay} />
       {/* </Show> */}
       <HourFore data={Data?.data?.data?.hourly} Icons={Icons} />
       <Detail data={Data?.data?.data} />
