@@ -7,6 +7,7 @@ export const Detail = ({ data }) => {
       p="20px"
       m="20px 10%"
       borderRadius={'20px'}
+      h="fit-content"
     >
       <Flex justifyContent={'space-between'}>
         <Text>Sunrise {new Date(data?.daily[0].sunrise * 1000).toString().slice(16, 24)} </Text>

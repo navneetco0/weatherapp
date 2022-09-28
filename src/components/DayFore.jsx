@@ -48,7 +48,7 @@ export const DayFore = ({ data, Icons, weakDay }) => {
             <DrawerHeader>7-days forecast</DrawerHeader>
             <DrawerBody overflow="scroll">
               {data&&data.map((Element, index) => (
-                <Flex>
+                <Flex key={index}>
                   <Text>{index===0?'Today':index===1?"Tomorrow":(weakDay[(new Date().getDay() + index-1)%7])}</Text>
                 </Flex>
               ))}

@@ -16,7 +16,7 @@ function App() {
   }
   return (
     <Box maxW="100%">
-     {position.lat&&position.lon&&<Box maxWidth={'448px'} m='auto'><Home lat={position.lat} lon={position.lon}/></Box>}
+     {position.lat&&position.lon&&<Box w={'100%'} m='auto'><Home lat={position.lat} lon={position.lon}/></Box>}
     </Box>
   );
 }

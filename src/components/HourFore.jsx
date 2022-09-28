@@ -10,6 +10,13 @@ export const HourFore = ({ data, Icons }) => {
       m={['10px 0px']}
       overflowX="scroll"
       gap="20px"
+      css={{
+        '&::-webkit-scrollbar-thumb': {
+          background: '#A0A0A0',
+          borderRadius: '24px',
+          width:['2px', '0px']
+        },
+      }}
     >
       {data &&
         data.map((Element, index) => (
@@ -33,7 +40,7 @@ export const HourFore = ({ data, Icons }) => {
                 : (hour + index).toString().length===1?`0${hour+index}:00`:`${(hour + index)}:00`}
            </Text>
            <Text>{Math.round(Element.temp)}°</Text>
-           <Box w="fit-content" m={'5px auto'}>{Icons[Element.weather[0].main]}</Box>
+           <Box w="fit-content" h="24px" m={'5px auto'}>{Icons[Element.weather[0].main]}</Box>
            <Flex alignItems={'center'} fontSize='12px'><Box w="fit-content" h="fit-content" transform={`rotate(${Element.wind_deg}deg)`}><Location/></Box> {Element.wind_speed}km/h</Flex>
           </Box>
         ))}

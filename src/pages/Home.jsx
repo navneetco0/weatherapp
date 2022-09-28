@@ -1,10 +1,10 @@
 import { Box, Flex } from "@chakra-ui/react";
 import { BGAn } from "../components/BGAn";
 import { Main } from "../components/Main";
-// import { Leaf } from "../assets/Leaf";
 import { Navbar } from "../components/Navbar";
 import { useLocation } from "../hooks/useLocation";
 import { useWeather } from "../hooks/useWeather";
+
 export const Home = ({ lat, lon }) => {
   const Data = useWeather(lat, lon);
   const location = useLocation(lat, lon);
@@ -15,7 +15,6 @@ export const Home = ({ lat, lon }) => {
       backgroundImage="linear-gradient(315deg, #0652C5 0%, #045DE9 74%)"
       color="white"
       pos={'relative'}
-      // p={["0px", '40px']}
     >
       {location?.data&&<Navbar data={location.data}/> }
       {Data?.data&&<BGAn data={Data?.data?.data}/>}
