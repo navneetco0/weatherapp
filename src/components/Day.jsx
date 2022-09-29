@@ -2,7 +2,13 @@ import { Box, Flex, Text } from '@chakra-ui/react'
 
 export const Day = ({ data, Icons, weakDay, bg }) => {
   return (
-    <Flex gap="20px" mt="50px" bg={bg?"blue":""} w="100%" overflowX="scroll">
+    <Flex gap="20px" mt="50px" bg={bg?"blue":""} w="100%" overflowX="scroll" className="hourForecast" css={{
+      '&::-webkit-scrollbar-thumb': {
+        background: '#A0A0A0',
+        borderRadius: '24px',
+        width:['2px', '0px']
+      },
+    }}>
       {data &&
         data.map((Element, index) => (
           <Box key={index} textAlign="center">
