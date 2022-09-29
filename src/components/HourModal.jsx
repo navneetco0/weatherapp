@@ -10,9 +10,10 @@ import {
 } from '@chakra-ui/react'
 import { useRef } from 'react'
 import { ArrowLeft } from '../assets/ArrowLeft'
+import { Day } from './Day'
 import { HourFore } from './HourFore'
 
-export const HourModal = ({ data, Icons }) => {
+export const HourModal = ({ data, Icons, weakDay }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = useRef();
   return (
@@ -27,7 +28,7 @@ export const HourModal = ({ data, Icons }) => {
         _hover={{ bg: 'rgba(255, 255, 255, 0.4)' }}
         _active={{ bg: 'rgba(255, 255, 255, 0.5)' }}
       >
-        48 hour forecast
+        7 Days forecast
       </Button>
       <Box w={['100%', '100px']} pos="relative">
         <Drawer
@@ -46,7 +47,7 @@ export const HourModal = ({ data, Icons }) => {
             </Box>
             <DrawerHeader>7-days forecast</DrawerHeader>
             <DrawerBody overflow="scroll">
-              <HourFore data={data} Icons={Icons} />
+              <Day data={data} Icons={Icons} weakDay={weakDay} bg="white" />
             </DrawerBody>
           </DrawerContent>
         </Drawer>
