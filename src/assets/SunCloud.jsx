@@ -2,7 +2,7 @@ export const SunCloud = () => {
   return (
     <svg
       className="sun-cloud"
-      height={'16px'}
+      height={'100%'}
       viewBox="0 0 512 512"
       fill="white"
     >

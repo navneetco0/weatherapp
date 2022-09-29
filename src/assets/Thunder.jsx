@@ -2,7 +2,7 @@ export const Thunder = () => {
   return (
     <svg
       className="thunder-cloud"
-      height={"24px"}
+      height={"100%"}
       viewBox="0 0 512 512"
     >
       <path

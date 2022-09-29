@@ -2,7 +2,7 @@ export const Rain = () => {
   return (
     <svg
       className="rain-cloud"
-      height={"16px"}
+      height={"100%"}
       viewBox="0 0 512 512"
       fill="white"
     >

@@ -2,7 +2,7 @@ export const WindyCloud = () => {
   return (
     <svg
       className="windy-cloud"
-      height={'24px'}
+      height={'100%'}
       viewBox="0 0 512 512"
     >
       <g className="cloud-wrap">

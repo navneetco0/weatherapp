@@ -1,12 +1,14 @@
-import { Box, Center, Flex, Grid, Show, Text } from '@chakra-ui/react'
+import { Box, Center, Flex, Hide, Show, Text } from '@chakra-ui/react'
 import { Rain } from '../assets/Rain'
 import { Snow } from '../assets/Snow'
 import { SunCloud } from '../assets/SunCloud'
 import { SunShine } from '../assets/SunShine'
 import { Thunder } from '../assets/Thunder'
-import { DayFore } from './DayFore'
+import { HourModal } from './HourModal'
 import { Detail } from './Detail'
 import { HourFore } from './HourFore'
+import { Day } from './Day'
+import Canvas from './Canvas'
 
 export const Main = ({ Data }) => {
   const weakDay = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -29,7 +31,7 @@ export const Main = ({ Data }) => {
           <Text textAlign={'center'} fontSize="25px">
             {Data?.data?.data?.hourly[0].weather[0].main}
           </Text>
-          <Box p={['10px 10%', '40px']}>
+          <Show below="768px" p={['10px 10%', '40px']}>
             <Flex justifyContent={'space-between'}>
               <Center>
               {' '}
@@ -64,15 +66,21 @@ export const Main = ({ Data }) => {
                 {Math.round(Data?.data?.data?.daily[2].temp.min)}°{' '}
               </Text>
             </Flex>
-          </Box>
+          </Show>
           {/* <Flex p="5px" bg="rgba(255, 255, 255, 0.5)" borderRadius={"20px"} w="fit-content" alignItems="center"><Leaf/> <Text>AQl </Text></Flex> */}
         </Box>
+        <Day data={Data?.data?.data?.daily} Icons={Icons} weakDay={weakDay} />
         <Show below="768px">
-          <DayFore data={Data?.data?.data?.daily} Icons={Icons} weakDay={weakDay} />
+          <HourModal data={Data?.data?.data?.hourly} Icons={Icons}  />
         </Show>
-        <HourFore data={Data?.data?.data?.hourly} Icons={Icons} />
       </Flex>
+      <Box>
       <Detail data={Data?.data?.data} />
+        <Hide below='768px'>
+        {Data&&Data?.data?.data?.hourly&&<Canvas data={Data?.data?.data?.hourly} Icons={Icons}/>}
+        </Hide>
+      </Box>
+      {/* <HourFore data={Data?.data?.data?.hourly} Icons={Icons} /> */}
     </Flex>
   )
 }

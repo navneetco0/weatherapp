@@ -6,14 +6,13 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
-  Flex,
-  Text,
   useDisclosure,
 } from '@chakra-ui/react'
 import { useRef } from 'react'
 import { ArrowLeft } from '../assets/ArrowLeft'
+import { HourFore } from './HourFore'
 
-export const DayFore = ({ data, Icons, weakDay }) => {
+export const HourModal = ({ data, Icons }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = useRef();
   return (
@@ -28,7 +27,7 @@ export const DayFore = ({ data, Icons, weakDay }) => {
         _hover={{ bg: 'rgba(255, 255, 255, 0.4)' }}
         _active={{ bg: 'rgba(255, 255, 255, 0.5)' }}
       >
-        7-days forecast
+        48 hour forecast
       </Button>
       <Box w={['100%', '100px']} pos="relative">
         <Drawer
@@ -47,11 +46,7 @@ export const DayFore = ({ data, Icons, weakDay }) => {
             </Box>
             <DrawerHeader>7-days forecast</DrawerHeader>
             <DrawerBody overflow="scroll">
-              {data&&data.map((Element, index) => (
-                <Flex key={index}>
-                  <Text>{index===0?'Today':index===1?"Tomorrow":(weakDay[(new Date().getDay() + index-1)%7])}</Text>
-                </Flex>
-              ))}
+              <HourFore data={data} Icons={Icons} />
             </DrawerBody>
           </DrawerContent>
         </Drawer>

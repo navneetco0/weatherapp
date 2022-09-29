@@ -2,7 +2,8 @@ import { Box, Flex, Text } from '@chakra-ui/react';
 import { Location } from "../assets/Location"
 
 export const HourFore = ({ data, Icons }) => {
-  const hour = new Date().getHours()
+  const hour = new Date().getHours();
+  
   return (
     <Flex
       w="100%"
