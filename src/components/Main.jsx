@@ -11,7 +11,7 @@ import { Day } from './Day'
 import Canvas from './Canvas'
 
 export const Main = ({ Data }) => {
-  const weakDay = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  const weakDay = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   const  Icons = { Rain: <Rain />, Clouds: <SunCloud />, Clear: <SunShine/>, Snow: <Snow/>, Thunder: <Thunder/> }
   return (
     <Flex
@@ -35,7 +35,7 @@ export const Main = ({ Data }) => {
             <Flex justifyContent={'space-between'}>
               <Center>
               {' '}
-                <Box mr="5px">{Icons[Data?.data?.data?.daily[0].weather[0].main]}</Box>{' '}
+                <Box mr="5px" w="16px">{Icons[Data?.data?.data?.daily[0].weather[0].main]}</Box>{' '}
                 Today: {Data?.data?.data?.daily[0].weather[0].main}
               </Center>{' '}
               <Text>
@@ -45,7 +45,7 @@ export const Main = ({ Data }) => {
             </Flex>
             <Flex justifyContent={'space-between'}>
               <Center>
-              <Box mr="5px">{Icons[Data?.data?.data?.daily[1].weather[0].main]}</Box>{' '}
+              <Box mr="5px" w="16px">{Icons[Data?.data?.data?.daily[1].weather[0].main]}</Box>{' '}
                 Tomorrow: {Data?.data?.data?.daily[1].weather[0].main}
               </Center>{' '}
               <Text>
@@ -55,7 +55,7 @@ export const Main = ({ Data }) => {
             </Flex>
             <Flex justifyContent={'space-between'} height="fit-content" alignItems={'center'}>
               <Center alignItems={'center'}>
-                <Box mr="5px">{Icons[Data?.data?.data?.daily[2].weather[0].main]}</Box>{' '}
+                <Box mr="5px" w="16px">{Icons[Data?.data?.data?.daily[2].weather[0].main]}</Box>{' '}
                 <Text>
                   {weakDay[(new Date().getDay() + 1)%7]}:{' '}
                   {Data?.data?.data?.daily[2].weather[0].main}
