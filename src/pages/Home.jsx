@@ -1,6 +1,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 import { BGAn } from "../components/BGAn";
-import Canvas from "../components/Canvas";
+// import Canvas from "../components/Canvas";
 import { Main } from "../components/Main";
 import { Navbar } from "../components/Navbar";
 import { useLocation } from "../hooks/useLocation";

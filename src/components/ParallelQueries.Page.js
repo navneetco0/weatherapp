@@ -1,9 +1,8 @@
-import { useQuery } from "react-query";
 import axios from 'axios';
 
-const fetchLocation = ()=>{
-    return axios.get()
-}
+// const fetchLocation = ()=>{
+//     return axios.get()
+// }
 
 export const ParallelQueriesPage=()=>{
     return <div>ParallelQueriesPage</div>

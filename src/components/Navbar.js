@@ -1,6 +1,5 @@
-import { Flex, Box, Text, filter } from '@chakra-ui/react'
+import { Flex, Box, Text } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
-import { useQuery } from 'react-query'
 import { Location } from '../assets/Location'
 import { Search } from '../assets/Search'
 import { useGetData } from '../hooks/useGetData'
@@ -11,7 +10,7 @@ export const Navbar = ({ data }) => {
   const [search, setSearch] = useState(false)
   const [datas, setDatas] = useState(null)
   const [input, setInput] = useState(null)
-  const [debouncedValue, setDebouncedValue] = useState(input)
+  // const [debouncedValue, setDebouncedValue] = useState(input)
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -26,7 +25,7 @@ export const Navbar = ({ data }) => {
     return () => {
       clearTimeout(handler)
     }
-  }, [input])
+  }, [input, Cities])
   const handleInput = (e) => {
     e.target.value.length > 2 ? setInput(e.target.value) : setInput(null)
   }

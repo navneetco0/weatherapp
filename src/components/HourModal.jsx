@@ -11,7 +11,6 @@ import {
 import { useRef } from 'react'
 import { ArrowLeft } from '../assets/ArrowLeft'
 import { Day } from './Day'
-import { HourFore } from './HourFore'
 
 export const HourModal = ({ data, Icons, weakDay }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
