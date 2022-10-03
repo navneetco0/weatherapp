@@ -1,10 +1,6 @@
 import { Box, Text } from '@chakra-ui/react'
-import { useEffect } from 'react'
 
 export const CityBox = ({ data }) => {
-  useEffect(()=>{
-    console.log('box',data)
-  },[])
   return (
     <>
       <Box
