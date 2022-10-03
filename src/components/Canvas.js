@@ -47,18 +47,12 @@ const Canvas = ({ data, Icons }) => {
   }
 
   return (
-    // <div className="app">
-    //   <div className="row">
-    //     <div className="mixed-chart">
           <Chart
             options={state.options}
             series={state.series}
             type="area"
             width="500"
           />
-    //     </div>
-    //   </div>
-    // </div>
   )
 }
 
