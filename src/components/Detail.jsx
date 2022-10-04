@@ -10,8 +10,6 @@ export const Detail = ({ data }) => {
       h="fit-content"
     >
       <Flex justifyContent={'space-between'}>
-      <Text>Moonrise {new Date(data?.daily[0].moonrise * 1000).toString().slice(16, 24)} </Text>
-        <Text>moonset {new Date(data?.daily[0].moonset * 1000).toString().slice(16, 24)}</Text>
         <Text>Sunrise {new Date(data?.daily[0].sunrise * 1000).toString().slice(16, 24)} </Text>
         <Text>Sunset {new Date(data?.daily[0].sunset * 1000).toString().slice(16, 24)}</Text>
       </Flex>
