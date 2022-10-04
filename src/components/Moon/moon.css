@@ -1,0 +1,50 @@
+#moondiv{
+    width: 100%;
+    height:0px;
+    padding:100px 0px 25%;
+    overflow:hidden;
+    margin:auto;
+    position: absolute;
+    top:0;
+    left: 0;
+  }
+  .moonin{
+  /*   border:1px solid black; */
+    height:0px;
+    width:100%;
+    padding-bottom:100%;
+    border-radius: 50%;
+    position: relative;
+  }
+  #moon{
+    position: absolute;
+    height:50px;
+    width:50px;
+    top: 22%;
+    left: 7%;
+    overflow: hidden;
+    border-radius: 50%;
+    /* box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 10px 10px, rgba(255, 255, 255, 0.2) 0px 0px 50px 50px,
+    rgba(255, 255, 255, 0.1) 0px 0px 100px 100px; */
+  }
+  #relmoon{
+    height:50px;
+    width:50px;
+    background:white;
+    position: relative;
+  }
+  #absmoon{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  @keyframes rotateSun{
+    100%{
+      transform: rotate(120deg)
+    }
+  }
+
+  .de{
+    color:#010b1a
+  }

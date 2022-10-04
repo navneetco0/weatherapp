@@ -4,7 +4,7 @@ export const Cloud = () => {
     width={"100%"}
       viewBox="100 100 900 400"
       style={{
-        fill: '#fff',
+        fill: 'currentColor',
         opacity: '0.9',
         filter: 'url(#filter)'
       }}

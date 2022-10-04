@@ -9,11 +9,12 @@ import { useWeather } from "../hooks/useWeather";
 export const Home = ({ lat, lon }) => {
   const Data = useWeather(lat, lon);
   const location = useLocation(lat, lon);
+  const [hour] = new Date().toString().slice(16, 24).split(':');
   return (
     <Box
       w={"100%"}
       minH="100vh"
-      backgroundImage="linear-gradient(315deg, #0652C5 0%, #045DE9 74%)"
+      backgroundImage = {+hour>6&&+hour<18?"linear-gradient(315deg, #0652C5 0%, #045DE9 74%)":"linear-gradient(315deg, #010f22 0%, #010b1a 74%)"}
       color="white"
       pos={'relative'}
     >
