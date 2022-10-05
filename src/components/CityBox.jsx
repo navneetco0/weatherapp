@@ -1,8 +1,8 @@
 import { Box, Text } from '@chakra-ui/react'
-import {useDispatch} from 'react-redux';
-import {searched_city} from '../redux/action'
-export const CityBox = ({ data }) => {
-  const dispatch = useDispatch();
+import { useDispatch } from 'react-redux'
+import { searched_city } from '../redux/action'
+export const CityBox = ({ data, setSearch }) => {
+  const dispatch = useDispatch()
   return (
     <>
       <Box
@@ -21,7 +21,22 @@ export const CityBox = ({ data }) => {
       >
         {data &&
           data.map((Element, index) => (
-            <Text color="black" key={index} cursor="pointer" whiteSpace={'nowrap'} _hover={{bg:'rgba(0, 0, 255, 0.1)', p:'0px 5px'}} onClick={()=>dispatch(searched_city(Element.split(", ")[1].split("'").join('')))}>{Element.split("'").join('')}</Text>
+            <Text
+              color="black"
+              key={index}
+              cursor="pointer"
+              whiteSpace={'nowrap'}
+              _hover={{ bg: 'rgba(0, 0, 255, 0.1)', p: '0px 5px' }}
+              onClick={() =>
+               { dispatch(
+                  searched_city(Element.split(', ')[1].split("'").join('')),
+                );
+                setSearch(false)
+              }
+              }
+            >
+              {Element.split("'").join('')}
+            </Text>
           ))}
       </Box>
     </>

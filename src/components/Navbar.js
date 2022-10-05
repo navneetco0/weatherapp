@@ -80,7 +80,7 @@ export const Navbar = ({ data }) => {
           >
             <Search />
           </Box>
-          {search&&datas?.length && <CityBox data={datas} />}
+          {search&&datas?.length && <CityBox data={datas} setSearch={setSearch} />}
         </Flex>
         {!search && (
           <Box m="auto">
