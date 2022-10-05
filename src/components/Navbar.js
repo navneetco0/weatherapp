@@ -37,7 +37,7 @@ export const Navbar = ({ data }) => {
     }, 3000)
   }
   const handleSearch = () => {
-    setSearch(!search)
+    setSearch(!search);
   }
   return (
     <Flex position="fixed" top="0" left="0" w="100%" zIndex="2">
@@ -78,7 +78,7 @@ export const Navbar = ({ data }) => {
           >
             <Search />
           </Box>
-          {datas?.length && <CityBox data={datas} />}
+          {search&&datas?.length && <CityBox data={datas} />}
         </Flex>
         {!search && (
           <Box m="auto">
