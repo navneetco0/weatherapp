@@ -14,20 +14,19 @@ export const Navbar = ({ data }) => {
 
   useEffect(() => {
     const handler = setTimeout(() => {
-      input?Cities&&
+      input?(Cities&&
       setDatas(
         Cities?.data?.data.filter((Element) =>
-        Element.toLowerCase().includes(input.toLowerCase()),
+        Element.toLowerCase().includes(input.toLowerCase())
         ),
-        ):setDatas(null);
+        )):setDatas(null); 
     }, 3000)
-
     return () => {
       clearTimeout(handler)
     }
   }, [input, Cities])
   const handleInput = (e) => {
-    e.target.value.length > 2 ? setInput(e.target.value) : setInput(null)
+    setInput(e.target.value)
   }
   const handleSearch = () => {
     setSearch(!search)
@@ -39,7 +38,7 @@ export const Navbar = ({ data }) => {
           w={search ? '100%' : '16px'}
           boxShadow={
             search
-              ? '6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7)'
+              ? '0px 0px 10px 1px rgba(0, 0, 0, 0.15), 0px 0px 10px 1px rgba(255, 255, 255, 0.7)'
               : ''
           }
           bg={search && 'white'}

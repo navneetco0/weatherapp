@@ -19,7 +19,7 @@ export const CityBox = ({ data }) => {
       >
         {data &&
           data.map((Element, index) => (
-            <Text color="black" key={index}>{Element.split("'").join('')}</Text>
+            <Text color="black" key={index}>{Element}</Text>
           ))}
       </Box>
     </>
