@@ -1,4 +1,5 @@
 import { Box, Flex } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 import { BGAn } from "../components/BGAn";
 // import Canvas from "../components/Canvas";
 import { Main } from "../components/Main";
@@ -7,6 +8,7 @@ import { useLocation } from "../hooks/useLocation";
 import { useWeather } from "../hooks/useWeather";
 
 export const Home = ({ lat, lon }) => {
+  const data = useSelector(store=>store.mainReducer.data);
   const Data = useWeather(lat, lon);
   const location = useLocation(lat, lon);
   const [hour] = new Date().toString().slice(16, 24).split(':');
@@ -19,9 +21,9 @@ export const Home = ({ lat, lon }) => {
       pos={'relative'}
     >
       {location?.data&&<Navbar data={location.data}/> }
-      {Data?.data&&<BGAn data={Data?.data?.data}/>}
+      {Data?.data&&<BGAn data={data?(data?.data?.data):(Data?.data?.data)}/>}
       <Flex overflowX={'hidden'}>
-        {Data&&<Main Data={Data}/>}
+        {Data&&<Main Data={data?data:Data}/>}
       </Flex>
     </Box>
   );

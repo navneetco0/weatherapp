@@ -1,11 +1,13 @@
 import { Flex, Box, Text } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Location } from '../assets/Location'
 import { Search } from '../assets/Search'
 import { useGetData } from '../hooks/useGetData'
 import { CityBox } from './CityBox'
 
 export const Navbar = ({ data }) => {
+  const {searched_city} = useSelector(store=>store.mainReducer);
   const Cities = useGetData('https://crm-na.herokuapp.com/states/get-cities')
   const [search, setSearch] = useState(false)
   const [datas, setDatas] = useState(null)
@@ -84,7 +86,7 @@ export const Navbar = ({ data }) => {
           <Box m="auto">
             <Box w="fit-content">
               <Text fontSize={'24px'} color={'white'}>
-                {data ? data.data.name : ''}
+                {searched_city?searched_city:(data ? data.data.name : '')}
               </Text>
               <Flex w={'100%'}>
                 <Box m={'auto'} transform={'rotate(-70deg)'}>
