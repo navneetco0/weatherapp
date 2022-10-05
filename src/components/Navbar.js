@@ -26,7 +26,15 @@ export const Navbar = ({ data }) => {
     }
   }, [input, Cities])
   const handleInput = (e) => {
-    setInput(e.target.value)
+    setInput(e.target.value);
+    setTimeout(() => {
+      e.target.value?(Cities&&
+      setDatas(
+        Cities?.data?.data.filter((Element) =>
+        Element.toLowerCase().includes(e.target.value.toLowerCase())
+        )
+        )):setDatas(null); 
+    }, 3000)
   }
   const handleSearch = () => {
     setSearch(!search)
